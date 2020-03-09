@@ -1,8 +1,7 @@
 # **Portshift Orb for CircleCi**
 
 ## **What is the Portshift Orb?**
-The Portshift Orb enables you to you to scan images for vulnerabilities in CircleCI, and report results to the Portshift server.
-With this orb you can easily integrate Portshift vulnerabilities scans into your CircleCI Workflows.
+The Portshift Orb enables you to you to scan images for vulnerabilities, in CircleCI, and report the results to the Portshift server. It can also generate the Portshift ID for an image, based on the image hash and image metadata. Portshift uses this ID to track workloads in protected environments.
 
 Portshift workload runtime security policies can use vulnerabilities scan results as a criteria for allow or blocking images from running in Portshift protected environments.
 
@@ -38,8 +37,7 @@ Build your image:
 
 ```- run: docker build -t <myrepo/myimage:tag>```
 
-Save the image to the workspace:
-
+
 ```
  - persist_to_workspace:
           root: workspace
