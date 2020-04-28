@@ -4,21 +4,13 @@
 
 version: 2.1
 orbs:
-  portshiftscanner: 'portshift/portshift-scanner@2.0.0'
-jobs:
-  docker-build:
-    machine: true
-    steps:
-      - checkout
-      - run: 'docker pull mongo:latest'
+  portshiftscanner: 'portshift/portshift-scanner@2.0.1'
 
 workflows:
   scan-image:
     jobs:
       - docker-build
       - portshiftscanner/scan-image:
-          requires:
-            - docker-build
           context: credentials
           image_name: 'mongo'
           image_tag: 'latest'
